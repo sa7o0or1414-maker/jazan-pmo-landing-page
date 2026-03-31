@@ -1,0 +1,162 @@
+/* Custom Styles for Jazan PMO Landing Page */
+
+/* Theme Colors: Define custom properties for the theme color #153e46 */
+:root {
+    --primary-color: #153e46;
+    --primary-light: #2a5a63; /* Lighter shade for gradients */
+    --primary-dark: #0d2a2e; /* Darker shade for gradients */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Default to English font */
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Arabic Font Override */
+body.arabic {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    width: auto;
+}
+
+/* Custom Theme Background Class */
+.bg-theme {
+    background-color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    /* Placeholder background: Replace with actual image or gradient */
+    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); */
+    /* Alternative: background-image: url('path/to/jazan-image.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    min-height: 70vh;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('jiz.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3); /* Overlay for better text readability */
+    z-index: 1;
+}
+
+/* Ensure text is above overlay */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* About Section */
+.about-section {
+    background-color: #f8f9fa;
+}
+
+/* Card Hover Effects: Subtle animation for interactivity */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+.social-icons a {
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Custom Theme Text Class */
+.text-theme {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .navbar-brand img {
+        height: 50px; /* mobile-adjusted to keep layout */
+    }
+}
+
+/* Larger logo size */
+.navbar-brand img {
+    max-height: 70px;
+    width: auto;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .navbar-brand {
+    order: 2;
+}
+
+[dir="rtl"] .navbar-collapse {
+    order: 1;
+}
+
+[dir="rtl"] .btn {
+    order: 3;
+}
+
+[dir="rtl"] .card-body ul {
+    text-align: right;
+}
+
+/* Language Toggle Button */
+#lang-toggle {
+    min-width: 60px;
+}
+
+/* Smooth Scrolling for Nav Links */
+html {
+    scroll-behavior: smooth;
+}

@@ -54,11 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Toggle language on button click
+    // Language Toggle Button - Switch to English when clicked
     langToggle.addEventListener('click', function() {
-        const currentLang = langToggle.getAttribute('data-lang');
-        const newLang = currentLang === 'en' ? 'ar' : 'en';
-        updateLanguage(newLang);
+        updateLanguage('en');
     });
 
     // Smooth Scrolling for Navigation Links (both navbar and hero overlay)

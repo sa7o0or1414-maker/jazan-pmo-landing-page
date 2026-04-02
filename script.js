@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLanguage('en');
     });
 
-    // Smooth Scrolling for Navigation Links (both navbar and hero overlay)
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .hero-nav-link');
+    // Smooth Scrolling for Navigation Links (navbar, hero overlay, and custom nav links)
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .hero-nav-link, .nav-link-custom');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();

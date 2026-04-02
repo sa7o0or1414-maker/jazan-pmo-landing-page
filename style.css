@@ -40,6 +40,25 @@ body.arabic {
     text-align: center;
 }
 
+/* Navbar Custom Links - No Frame */
+.nav-link-custom {
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-link-custom:hover {
+    color: var(--primary-light) !important;
+    transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero-section {
     /* Placeholder background: Replace with actual image or gradient */

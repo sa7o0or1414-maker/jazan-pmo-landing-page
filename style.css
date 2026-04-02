@@ -29,9 +29,10 @@ body.arabic {
     width: auto;
 }
 
-/* Custom Theme Background Class */
-.bg-theme {
-    background-color: var(--primary-color) !important;
+/* Centered Logo */
+.navbar .mx-auto {
+    flex: 1;
+    text-align: center;
 }
 
 /* Hero Section */
@@ -184,20 +185,16 @@ footer {
 }
 
 /* RTL Support for Arabic */
-[dir="rtl"] .navbar-brand {
+[dir="rtl"] #lang-toggle {
     order: 1;
 }
 
-[dir="rtl"] .navbar-collapse {
+[dir="rtl"] .navbar-brand {
     order: 2;
 }
 
-[dir="rtl"] .btn {
+[dir="rtl"] .navbar-toggler {
     order: 3;
-}
-
-[dir="rtl"] #lang-toggle {
-    margin-left: auto;
 }
 
 [dir="rtl"] .card-body ul {

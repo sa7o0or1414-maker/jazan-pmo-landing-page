@@ -43,6 +43,7 @@ body.arabic {
     /* background-position: center; */
     min-height: 70vh;
     position: relative;
+    padding-top: 80px; /* Account for navigation overlay */
 }
 
 .hero-section::before {
@@ -176,25 +177,6 @@ footer {
     color: var(--primary-color) !important;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: 60vh;
-    }
-
-    .display-4 {
-        font-size: 2.5rem;
-    }
-
-    .lead {
-        font-size: 1.1rem;
-    }
-
-    .navbar-brand img {
-        height: 70px; /* mobile-adjusted to keep layout */
-    }
-}
-
 /* Larger logo size */
 .navbar-brand img {
     max-height: 100px;
@@ -245,6 +227,9 @@ footer {
     border: 1px solid #dbe2ea;
     background-color: #fff;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .feedback-btn:hover,
@@ -264,7 +249,64 @@ footer {
     font-weight: 600;
 }
 
-/* Smooth Scrolling for Nav Links */
-html {
-    scroll-behavior: smooth;
+/* Hero Navigation Overlay */
+.hero-nav-overlay {
+    position: absolute;
+    top: 120px; /* Below the navbar */
+    left: 0;
+    right: 0;
+    z-index: 3; /* Above hero overlay */
+    background: rgba(0, 0, 0, 0.1); /* Subtle background */
+    padding: 15px 0;
+}
+
+.hero-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hero-nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Responsive adjustments for hero nav */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+        padding-top: 60px; /* Adjust for mobile */
+    }
+
+    .hero-nav-overlay {
+        top: 100px;
+        padding: 10px 0;
+    }
+
+    .hero-nav-list {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .hero-nav-link {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
 }

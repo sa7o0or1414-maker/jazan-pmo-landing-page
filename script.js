@@ -3,7 +3,6 @@
 // Language Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const langToggle = document.getElementById('lang-toggle');
-    const langText = document.getElementById('lang-text');
     const html = document.documentElement;
     const body = document.body;
 
@@ -44,14 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
             html.setAttribute('dir', 'rtl');
             html.setAttribute('lang', 'ar');
             body.classList.add('arabic');
-            langText.textContent = 'AR';
-            langToggle.setAttribute('data-lang', 'ar');
+            // Update globe icon color for Arabic
+            langToggle.style.color = '#007bff';
         } else {
             html.setAttribute('dir', 'ltr');
             html.setAttribute('lang', 'en');
             body.classList.remove('arabic');
-            langText.textContent = 'EN';
-            langToggle.setAttribute('data-lang', 'en');
+            // Update globe icon color for English
+            langToggle.style.color = '#fff';
         }
     }
 
@@ -62,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLanguage(newLang);
     });
 
-    // Smooth Scrolling for Navigation Links
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    // Smooth Scrolling for Navigation Links (both navbar and hero overlay)
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .hero-nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();

@@ -29,6 +29,11 @@ body.arabic {
     width: auto;
 }
 
+/* Custom Theme Background Class */
+.bg-theme {
+    background-color: var(--primary-color) !important;
+}
+
 /* Centered Logo */
 .navbar .mx-auto {
     flex: 1;
@@ -78,6 +83,45 @@ body.arabic {
     z-index: 2;
 }
 
+/* Hero Navigation Overlay */
+.hero-nav-overlay {
+    position: absolute;
+    top: 120px; /* Below the navbar */
+    left: 0;
+    right: 0;
+    z-index: 3; /* Above hero overlay */
+    background: rgba(0, 0, 0, 0.1); /* Subtle background */
+    padding: 15px 0;
+}
+
+.hero-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hero-nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
 /* About Section */
 .about-section {
     background-color: #f8f9fa;
@@ -123,11 +167,6 @@ body.arabic {
 .flip-card-front {
     background-color: #fff;
     color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
 }
 
 .flip-card-back {
@@ -155,11 +194,6 @@ body.arabic {
     transition: none;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
 /* Footer */
 footer {
     margin-top: auto;
@@ -184,36 +218,10 @@ footer {
     width: auto;
 }
 
-/* RTL Support for Arabic */
-[dir="rtl"] #lang-toggle {
-    order: 1;
-}
-
-[dir="rtl"] .navbar-brand {
-    order: 2;
-}
-
-[dir="rtl"] .navbar-toggler {
-    order: 3;
-}
-
-[dir="rtl"] .card-body ul {
-    text-align: right;
-}
-
-/* Give section targets extra top margin to account for sticky navbar */
-#mission, #vision, #goals {
-    scroll-margin-top: 110px;
-}
-
-/* Language Toggle Button */
-#lang-toggle {
-    min-width: 60px;
-}
-
 /* Feedback survey styles */
 .feedback-section {
     border-top: 1px solid #e9ecf1;
+    background-color: #f8f9fa;
 }
 
 .feedback-btn {
@@ -246,43 +254,27 @@ footer {
     font-weight: 600;
 }
 
-/* Hero Navigation Overlay */
-.hero-nav-overlay {
-    position: absolute;
-    top: 120px; /* Below the navbar */
-    left: 0;
-    right: 0;
-    z-index: 3; /* Above hero overlay */
-    background: rgba(0, 0, 0, 0.1); /* Subtle background */
-    padding: 15px 0;
+/* Give section targets extra top margin to account for sticky navbar */
+#mission, #vision, #goals {
+    scroll-margin-top: 110px;
 }
 
-.hero-nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+/* Language Toggle Button */
+#lang-toggle {
+    min-width: 60px;
 }
 
-.hero-nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    padding: 8px 16px;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+/* RTL Support for Arabic */
+[dir="rtl"] #lang-toggle {
+    order: 1;
 }
 
-.hero-nav-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    color: #fff;
+[dir="rtl"] .navbar-brand {
+    order: 2;
+}
+
+[dir="rtl"] .navbar-toggler {
+    order: 3;
 }
 
 /* Responsive adjustments for hero nav */
@@ -306,4 +298,13 @@ footer {
         font-size: 1rem;
         padding: 6px 12px;
     }
+
+    .navbar-brand img {
+        height: 70px; /* mobile-adjusted to keep layout */
+    }
+}
+
+/* Smooth Scrolling for Nav Links */
+html {
+    scroll-behavior: smooth;
 }

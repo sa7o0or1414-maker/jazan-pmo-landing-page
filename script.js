@@ -72,12 +72,35 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetSection) {
                 targetSection.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'start'
+                    block: 'center'
                 });
             }
         });
     });
 
-    // Initialize with English
-    updateLanguage('en');
+    // Feedback buttons behavior
+    const feedbackButtons = document.querySelectorAll('.feedback-btn');
+    const feedbackMessage = document.getElementById('feedback-message');
+
+    feedbackButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            feedbackButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const rate = button.getAttribute('data-rating');
+            const msg = {
+                1: { en: 'Very Dissatisfied', ar: 'غير راضٍ جدًا' },
+                2: { en: 'Dissatisfied', ar: 'غير راضٍ' },
+                3: { en: 'Neutral', ar: 'محايد' },
+                4: { en: 'Satisfied', ar: 'راضٍ' },
+                5: { en: 'Very Satisfied', ar: 'راضٍ جدًا' }
+            };
+
+            const activeLang = langToggle.getAttribute('data-lang');
+            feedbackMessage.textContent = activeLang === 'ar' ? msg[rate].ar : msg[rate].en;
+        });
+    });
+
+    // Initialize with Arabic
+    updateLanguage('ar');
 });
